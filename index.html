@@ -18,7 +18,7 @@
 
     <div>Teachable Machine Image Model</div>
     <div id="webcam-container"></div>
-    <div  > <video id="video" ></video></div>
+    
 <button type="button" onclick="init()">Start</button>
 <form>
 <!-- <input type="file" accept="video/*" capture="camera" id="recorder"> -->
@@ -82,6 +82,7 @@ const button = document.getElementById('button');
     })
         const flip = true; // whether to flip the webcam
         webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+        console.log(webcam.getWebcam())
         await webcam.setup(); // request access to the webcam
         await webcam.play();
         window.requestAnimationFrame(loop);
